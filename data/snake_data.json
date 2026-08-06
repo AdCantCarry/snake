@@ -1,0 +1,11 @@
+{
+  "game_name": "SNAKE CYBER 2026",
+  "version": "5.0 Ultra",
+  "skins": [
+    { "id": "cyan_cyber", "name": "Neon Cyan", "color": "#05d9e8", "glow": "#00f076", "icon": "🔵" },
+    { "id": "magma_fire", "name": "Magma Flame", "color": "#ff2a6d", "glow": "#ffc400", "icon": "🔥" },
+    { "id": "toxic_green", "name": "Toxic Biohazard", "color": "#00f076", "glow": "#05d9e8", "icon": "☣️" },
+    { "id": "golden_king", "name": "Golden 24K", "color": "#ffc400", "glow": "#ffffff", "icon": "👑" },
+    { "id": "rainbow_quantum", "name": "Rainbow Matrix", "color": "#b5179e", "glow": "#05d9e8", "icon": "🌈" }
+  ]
+}

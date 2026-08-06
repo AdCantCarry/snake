@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snake Mini Console</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- THIẾT BỊ MÁY CHƠI GAME CONSOLE NHỎ GỌN MINI -->
+    <div class="console-body">
+        
+        <!-- HEADER MÁY GAME -->
+        <div class="console-header">
+            <div class="led-light"></div>
+            <div class="console-brand">SNAKE MINI</div>
+            <button id="leaderboardBtn" class="top-btn">🏆 TOP</button>
+        </div>
+
+        <!-- MÀN HÌNH KHUNG GAME (SCREEN BEZEL) -->
+        <div class="console-screen-bezel">
+            <div class="screen-header">
+                <span class="hud-text">SCORE: <strong id="scoreVal">0</strong></span>
+                <span class="hud-text">LEVEL: <strong id="levelVal">1</strong></span>
+            </div>
+            
+            <canvas id="gameCanvas" width="400" height="300"></canvas>
+        </div>
+
+        <!-- CÁC NÚT ĐIỀU KHIỂN DỄ THAO TÁC -->
+        <div class="console-controls">
+            <!-- D-PAD GRID MINI -->
+            <div class="dpad-grid">
+                <button class="pad-btn d-up" data-key="UP">▲</button>
+                <button class="pad-btn d-left" data-key="LEFT">◀</button>
+                <div class="d-center"></div>
+                <button class="pad-btn d-right" data-key="RIGHT">▶</button>
+                <button class="pad-btn d-down" data-key="DOWN">▼</button>
+            </div>
+
+            <!-- NÚT START -->
+            <div class="console-center">
+                <button class="sys-btn" id="startBtn">START</button>
+            </div>
+
+            <!-- NÚT ACTION A / B MINI -->
+            <div class="action-container">
+                <button class="act-btn btn-b" data-key="B">B</button>
+                <button class="act-btn btn-a" data-key="A">A</button>
+            </div>
+        </div>
+
+        <!-- SKINS BAR -->
+        <div class="skin-bar">
+            <button class="skin-btn active" data-skin="cyan_cyber">🔵 Cyan</button>
+            <button class="skin-btn" data-skin="magma_fire">🔥 Magma</button>
+            <button class="skin-btn" data-skin="toxic_green">☣️ Toxic</button>
+            <button class="skin-btn" data-skin="golden_king">👑 Gold</button>
+            <button class="skin-btn" data-skin="rainbow_quantum">🌈 Rainbow</button>
+        </div>
+
+    </div>
+
+    <!-- MODAL KỶ LỤC -->
+    <div class="leaderboard-modal" id="leaderboardModal">
+        <div class="lb-content">
+            <h3 class="lb-title">🏆 KỶ LỤC DẪN ĐẦU</h3>
+            <div id="leaderboardList"></div>
+            <button class="close-btn" id="closeLeaderboardBtn">&times;</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/snake_engine.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
